@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import './AlbumPreview.css';
 
 export default class AlbumPreview extends Component {
   render() {
-    console.log(this.props);
     const { artistName,
       artworkUrl100,
       collectionName,
@@ -15,10 +15,12 @@ export default class AlbumPreview extends Component {
         to={ `/album/${collectionId}` }
         data-testid={ `link-to-album-${collectionId}` }
       >
-        <img src={ artworkUrl100 } alt="Capa do Album" />
-        <h1>{collectionName}</h1>
-        <p>{artistName}</p>
-        <p>{releaseDate}</p>
+        <div className="wrapper">
+          <img src={ artworkUrl100 } alt="Capa do Album" />
+          <h1>{collectionName}</h1>
+          <p>{artistName}</p>
+          <p>{releaseDate}</p>
+        </div>
       </Link>
     );
   }

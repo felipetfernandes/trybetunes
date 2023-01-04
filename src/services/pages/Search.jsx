@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Header from '../../components/Header';
-import Load from '../../components/Load';
-import AlbumPreview from '../../components/AlbumPreview';
+import Header from '../../components/Header/Header';
+import Load from '../../components/Load/Load';
+import AlbumPreview from '../../components/AlbumPreview/AlbumPreview';
 import searchAlbumsAPI from '../searchAlbumsAPI';
 
 export default class Search extends Component {

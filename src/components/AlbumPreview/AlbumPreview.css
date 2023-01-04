@@ -1,0 +1,35 @@
+* {
+  text-decoration: none;
+}
+
+*:visited {
+  color: black;
+}
+
+.wrapper > * {
+  box-sizing: border-box;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  border: 0.1px solid black;
+  margin-inline: auto;
+  margin-top: 20px;
+  width: 200px;
+}
+
+.wrapper > img {
+  width: 100%;
+}
+
+.wrapper > h1 {
+  font-size: 20px;
+  text-align: center;
+}
+
+.wrapper > p {
+  font-size: 15px;
+  text-align: center;
+}
