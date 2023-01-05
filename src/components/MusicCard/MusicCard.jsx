@@ -33,7 +33,9 @@ export default class MusicCard extends Component {
       this.setState({ load: true,
         checked: true });
       await addSong(this.props);
-      this.setState({ load: false });
+      const favorites = await getFavoriteSongs();
+      this.setState({ load: false,
+        favorites });
     }
   };
 
