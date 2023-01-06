@@ -29,11 +29,7 @@ export default class Header extends Component {
           ? <Load />
           : (
             <div>
-              <p data-testid="header-user-name">
-                Olá
-                {' '}
-                {name}
-              </p>
+              <p data-testid="header-user-name">{name}</p>
               <nav>
                 <Link to="/search" data-testid="link-to-search">Search</Link>
                 <Link to="/favorites" data-testid="link-to-favorites">Favorites</Link>

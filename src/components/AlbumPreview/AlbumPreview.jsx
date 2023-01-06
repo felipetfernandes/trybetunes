@@ -15,7 +15,7 @@ export default class AlbumPreview extends Component {
         to={ `/album/${collectionId}` }
         data-testid={ `link-to-album-${collectionId}` }
       >
-        <div className="wrapper">
+        <div className="wrapper-album">
           <img src={ artworkUrl100 } alt="Capa do Album" />
           <h1>{collectionName}</h1>
           <p>{artistName}</p>
