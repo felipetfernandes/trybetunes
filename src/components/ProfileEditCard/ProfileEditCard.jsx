@@ -5,7 +5,7 @@ export default class ProfileEditCard extends Component {
   render() {
     const { saveChanges,
       onInputChange,
-      disabled,
+      buttonDisabled,
       name,
       email,
       description,
@@ -49,7 +49,7 @@ export default class ProfileEditCard extends Component {
         />
         <button
           type="submit"
-          disabled={ disabled }
+          disabled={ buttonDisabled }
           data-testid="edit-button-save"
           onClick={ saveChanges }
         >
@@ -65,7 +65,7 @@ ProfileEditCard.propTypes = {
   email: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  disabled: PropTypes.bool.isRequired,
+  buttonDisabled: PropTypes.bool.isRequired,
   saveChanges: PropTypes.func.isRequired,
   onInputChange: PropTypes.func.isRequired,
 };

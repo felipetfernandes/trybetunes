@@ -13,7 +13,7 @@ export default class ProfileEdit extends Component {
     email: '',
     description: '',
     image: '',
-    disabled: true,
+    buttonDisabled: true,
   };
 
   async componentDidMount() {
@@ -42,25 +42,25 @@ export default class ProfileEdit extends Component {
     case (!(/([a-z])\w+@[a-z]\w+.com/g).test(email)):
     case description === '':
     case image === '':
-      this.setState({ disabled: true });
+      this.setState({ buttonDisabled: true });
       break;
     default:
-      this.setState({ disabled: false });
+      this.setState({ buttonDisabled: false });
       break;
     }
   };
 
   saveChanges = () => {
     const { history } = this.props;
-    const { name, email, description, image } = this.state;
+    const { name, email, description, image, user } = this.state;
     this.setState({ load: true }, async () => {
-      await updateUser({ name, email, description, image });
+      await updateUser({ name, email, description, image }, user.name);
       return history.push('/profile');
     });
   };
 
   render() {
-    const { load, disabled } = this.state;
+    const { load, buttonDisabled } = this.state;
     return (
       <div data-testid="page-profile-edit">
         <p>Profile Edit Page</p>
@@ -71,7 +71,7 @@ export default class ProfileEdit extends Component {
               { ...this.state }
               saveChanges={ this.saveChanges }
               onInputChange={ this.onInputChange }
-              disabled={ disabled }
+              buttonDisabled={ buttonDisabled }
             />
           )}
       </div>
