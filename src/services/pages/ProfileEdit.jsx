@@ -52,9 +52,9 @@ export default class ProfileEdit extends Component {
 
   saveChanges = () => {
     const { history } = this.props;
-    const { name, email, description, image, user } = this.state;
+    const { name, email, description, image } = this.state;
     this.setState({ load: true }, async () => {
-      await updateUser({ name, email, description, image }, user.name);
+      await updateUser({ name, email, description, image });
       return history.push('/profile');
     });
   };
